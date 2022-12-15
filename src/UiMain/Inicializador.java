@@ -130,7 +130,7 @@ public class Inicializador {
         Asignatura asignaturaPrueba8 = new Asignatura("Asignatura8",3,new Grupo(),notas8,TIPO.FUND_OBLIGATORIA);
         estudiante8.getHistoriaAcademica().getAsignaturasVistas().add(asignaturaPrueba8);
 
-        Trabajo trabajo9 = new Trabajo(100,3);
+        Trabajo trabajo9 = new Trabajo(100,4.1f);
         ArrayList<Trabajo> notas9 = new ArrayList<>();
         notas9.add(trabajo9);
         Asignatura asignaturaPrueba9 = new Asignatura("Asignatura9",3,new Grupo(),notas9,TIPO.FUND_OBLIGATORIA);
@@ -185,7 +185,7 @@ public class Inicializador {
         Asignatura asignaturaPrueba17 = new Asignatura("Asignatura16",3,new Grupo(),notas17,TIPO.FUND_OBLIGATORIA);
         estudiante17.getHistoriaAcademica().getAsignaturasVistas().add(asignaturaPrueba17);
 
-        Trabajo trabajo18 = new Trabajo(100,5);
+        Trabajo trabajo18 = new Trabajo(100,4.1f);
         ArrayList<Trabajo> notas18 = new ArrayList<>();
         notas18.add(trabajo18);
         Asignatura asignaturaPrueba18 = new Asignatura("Asignatura16",3,new Grupo(),notas18,TIPO.FUND_OBLIGATORIA);

@@ -6,7 +6,7 @@ public class MenuPrincipal {
     public static void Menu(){
         System.out.println("BIENVENIDO AL SIA");
         System.out.println();
-        System.out.println("¿Que desea hacer en el dia de hoy?");
+        System.out.println("Que desea hacer en el dia de hoy?");
         String respuesta = "0";
         do{
             System.out.println("1. Hacer procedimiento de inscripción de materias a un estudiante");
@@ -24,6 +24,7 @@ public class MenuPrincipal {
 
                 case "2":
                     respuesta = "0";
+                    MenuPromedios.mostrarMenuPromedios();
                     break;
 
                 case "3":
