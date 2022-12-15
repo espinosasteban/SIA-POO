@@ -1,0 +1,5 @@
+package administracion;
+
+public enum TIPO {
+    DISCIPLINAR_OBLIGATORIA, FUND_OBLIGATORIA, LIBRE_ELECCION, NIVELACION
+}

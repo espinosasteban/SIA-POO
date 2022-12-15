@@ -1,2 +1,2 @@
-# Zona-POO
-Práctica de programación orientada a Objetos en Java
+# SIA-POO
+Practica de programación orientada a Objetos en Java
