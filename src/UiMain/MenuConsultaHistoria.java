@@ -41,6 +41,7 @@ public class MenuConsultaHistoria {
                     
                 case "3":
                     respuesta = "0";
+                    System.out.println("Por favor digite la cedula del estudiante");
                     String cedula = sc.nextLine();
                     MenuConsultaHistoria.mostrarResultados("cedula",cedula);
 
@@ -58,14 +59,7 @@ public class MenuConsultaHistoria {
 
     }
 
-    private static void FiltroCedula() {
 
-    }
-
-    private static void FiltroNombre(String nombre) {
-
-
-    }
 
 
 
@@ -123,16 +117,18 @@ public class MenuConsultaHistoria {
                 break;
 
             case "cedula":
-                for (Estudiante estudiante: arrayEstudiantes){
-
-                    if (estudiante.getCedula().toLowerCase().contains(busqueda)){
-                        listaEstudiantes.add(estudiante);
+                for (Estudiante estudiante: arrayEstudiantes) {
+                    if (estudiante.getCedula() != null) {
+                        if (estudiante.getCedula().contains(busqueda)) {
+                            listaEstudiantes.add(estudiante);
+                        }
                     }
                 }
+                break;
 
             case "nombre":
                 for (Estudiante estudiante: arrayEstudiantes){
-                    if ((estudiante.getCorreo() + " " + estudiante.getApellido()).contains(busqueda)){
+                    if (((estudiante.getCorreo() + " " + estudiante.getApellido()).toLowerCase()).contains(busqueda)){
                         listaEstudiantes.add(estudiante);
                     }
                 }

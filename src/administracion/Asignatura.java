@@ -17,6 +17,9 @@ public class Asignatura {
         this.tipo = tipo;
     }
 
+    public Asignatura() {
+    }
+
     public int getCantidadCreditos() {
         return cantidadCreditos;
     }

@@ -13,6 +13,7 @@ public class MenuPrincipal {
             System.out.println("2. Generar lista de mejores promedios");
             System.out.println("3. Consultar una historia academica");
             System.out.println("4. Simular semestre");
+            System.out.println("5. Acabar semestre ");
 
 
             Scanner sc = new Scanner(System.in);
@@ -35,6 +36,13 @@ public class MenuPrincipal {
                 case "4":
                     respuesta = "0";
                     break;
+
+                case "5":
+                    respuesta ="0";
+                    AcabarSemestre.terminarSemestre();
+                    MenuPrincipal.Menu();
+                    break;
+
 
                 default:
                     System.out.println("Por favor selecciona una de las opciones anteriormente indicadas");

@@ -55,7 +55,9 @@ public class MenuPromedios {
         LinkedHashMap<Estudiante, Float> mapaOrdenado = new LinkedHashMap<>();
 
         for(Estudiante estudiante: Estudiante.getArrayEstudiantes()){
-            estudiantesPromedios.put(estudiante, estudiante.getHistoriaAcademica().calcularPAPA());
+            estudiante.getHistoriaAcademica().calcularPAPA();
+            if (!Double.isNaN(estudiante.getHistoriaAcademica().getPAPA()))
+                estudiantesPromedios.put(estudiante, estudiante.getHistoriaAcademica().getPAPA());
         }
 
         estudiantesPromedios.entrySet().stream().sorted

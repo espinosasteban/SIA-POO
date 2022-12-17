@@ -8,15 +8,15 @@ import java.util.HashMap;
 public class Inicializador {
     public static void inicializar(){
         //Creación de estudiantes
-        /*
-        ArrayList<Estudiante> estudiantesPrueba = new ArrayList<>();
-        Estudiante estudiante1 = new Estudiante("yormansito@unal.edu.co","Yorman","Carmona", 18);
-        Estudiante estudiante2 = new Estudiante("esespinosap@unal.edu.co","Esteban","Espinosa",20);
-        Estudiante estudiante3 = new Estudiante("mateozame@unal.edu.co","Mateo","Zapata",22);
 
-        estudiantesPrueba.add(estudiante1);
-        estudiantesPrueba.add(estudiante2);
-        estudiantesPrueba.add(estudiante3);
+        ArrayList<Estudiante> estudiantesPrueba = new ArrayList<>();
+        Estudiante estudiante20 = new Estudiante("yormansito@unal.edu.co","Yorman","Carmona", 18);
+        Estudiante estudiante21 = new Estudiante("esespinosap@unal.edu.co","Esteban","Espinosa",20);
+        Estudiante estudiante22 = new Estudiante("mateozame@unal.edu.co","Mateo","Zapata",22);
+
+        estudiantesPrueba.add(estudiante20);
+        estudiantesPrueba.add(estudiante21);
+        estudiantesPrueba.add(estudiante22);
 
         //Creacion de trabajos
 
@@ -50,18 +50,31 @@ public class Inicializador {
         HashMap<String, String> horarioPOO = new HashMap<>();
         horarioPOO.put("Martes","16:00");
         horarioPOO.put("Jueves", "14:00");
-        Asignatura POO = new Asignatura("POO",3, new Grupo(estudiantesPrueba, 3, horarioPOO),notasPOO, TIPO.FUND_OBLIGATORIA);
+        Asignatura POO = new Asignatura("POO",3, new Grupo("POO",estudiantesPrueba, 3, horarioPOO),notasPOO, TIPO.FUND_OBLIGATORIA);
+
 
         //TLP
 
         HashMap<String,String> horarioTLP = new HashMap<>();
         horarioTLP.put("Miercoles", "8:00");
         horarioTLP.put("Viernes","10:00");
-        Asignatura TLP = new Asignatura("TLP",3, new Grupo(estudiantesPrueba, 4, horarioTLP),notasTLP, TIPO.FUND_OBLIGATORIA);
+        Asignatura TLP = new Asignatura("TLP",3, new Grupo("TLP",estudiantesPrueba, 4, horarioTLP),notasTLP, TIPO.FUND_OBLIGATORIA);
 
-        estudiante1.getHistoriaAcademica().getAsignaturasVistas().add(POO);
-        estudiante1.getHistoriaAcademica().getAsignaturasVistas().add(TLP);
-        */
+        estudiante20.getAsignaturasActuales().add(POO);
+        estudiante20.getAsignaturasActuales().add(TLP);
+
+        ArrayList<Asignatura> listaAsignaturas = new ArrayList<>();
+        listaAsignaturas.add(TLP);
+        listaAsignaturas.add(POO);
+
+
+        //Creacion de periodos
+
+        Periodo periodo1 = new Periodo("2022-2S",listaAsignaturas);
+
+        estudiante20.setPeriodoActual(periodo1);
+
+        //Creacion de estudiantes
 
         Estudiante estudiante1 = new Estudiante("aaa@unal.edu.co","Nombre1","Apellido1", 20);
         Estudiante estudiante2 = new Estudiante("aaa@unal.edu.co","Nombre2","Apellido2", 20);
@@ -87,6 +100,7 @@ public class Inicializador {
         notas1.add(trabajo1);
         Asignatura asignaturaPrueba1 = new Asignatura("Asignatura1",3,new Grupo(),notas1,TIPO.FUND_OBLIGATORIA);
         estudiante1.getHistoriaAcademica().getAsignaturasVistas().add(asignaturaPrueba1);
+
 
         Trabajo trabajo2 = new Trabajo(100,4.1f);
         ArrayList<Trabajo> notas2 = new ArrayList<>();

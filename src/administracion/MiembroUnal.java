@@ -35,6 +35,10 @@ public abstract class MiembroUnal {
         MiembroUnal.getMiembrosUnal().add(this);
     }
 
+    public MiembroUnal() {
+
+    }
+
     public abstract String saludar();
     public String getCorreo() {
         return correo;

@@ -9,7 +9,7 @@ public class HistoriaAcademica {
     private int creditosLibreEleccion = 0;
     private int creditosNivelacion = 0;
     private ArrayList<Asignatura> asignaturasVistas;
-    private ArrayList<Periodo> periodos = new ArrayList<>();
+    private ArrayList<Periodo> periodos;
 
     public HistoriaAcademica(ArrayList<Asignatura> asignaturasVistas, ArrayList<Periodo> periodos) {
 
@@ -22,7 +22,7 @@ public class HistoriaAcademica {
         this.periodos = new ArrayList<>();
     }
 
-    public float calcularPAPA() {
+    public void calcularPAPA() {
         int totalCreditos = 0;
         setCreditosDiscOblg(0);
         setCreditosFundOblg(0);
@@ -52,7 +52,6 @@ public class HistoriaAcademica {
         }
 
         setPAPA(creditosPorCalificacion / totalCreditos);
-        return creditosPorCalificacion / totalCreditos;
     }
 
 
@@ -111,4 +110,6 @@ public class HistoriaAcademica {
     public void setPAPA(float PAPA) {
         this.PAPA = PAPA;
     }
+
+
 }
