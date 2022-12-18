@@ -17,7 +17,19 @@ public class Asignatura {
         this.tipo = tipo;
     }
 
-    public Asignatura() {
+    public Asignatura(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Asignatura(String nombre, int cantidadCreditos) {
+        this.nombre = nombre;
+        this.cantidadCreditos = cantidadCreditos;
+    }
+
+    public Asignatura(String nombre, int cantidadCreditos, TIPO tipo) {
+        this.nombre = nombre;
+        this.cantidadCreditos = cantidadCreditos;
+        this.tipo = tipo;
     }
 
     public int getCantidadCreditos() {
@@ -46,12 +58,15 @@ public class Asignatura {
 
     public float calcularDefinitiva(){
         float definitiva = 0;
+        if (getNotas() != null){
+            for (Trabajo trabajo: notas){
+                float notaTrabajo = ((float)trabajo.getPorcentaje() / 100) * trabajo.getCalificacion();
+                definitiva += notaTrabajo;
+            }
+            definitiva = (float)(Math.round(definitiva * 100.0) / 100.0);
 
-        for (Trabajo trabajo: notas){
-            float notaTrabajo = ((float)trabajo.getPorcentaje() / 100) * trabajo.getCalificacion();
-            definitiva += notaTrabajo;
         }
-        return (float)(Math.round(definitiva * 100.0) / 100.0);
+        return definitiva;
     }
 
     public TIPO getTipo() {

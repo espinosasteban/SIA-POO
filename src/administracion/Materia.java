@@ -18,6 +18,15 @@ public class Materia {
         this.profesores = profesores;
         this.prerrequisitos = prerrequisitos;
         this.tipo = tipo;
+        Materia.getMaterias().add(this);
+    }
+
+    public Materia(String nombre, int cantidadCreditos, ArrayList<Asignatura> prerrequisitos, TIPO tipo) {
+        this.nombre = nombre;
+        this.cantidadCreditos = cantidadCreditos;
+        this.prerrequisitos = prerrequisitos;
+        this.tipo = tipo;
+        Materia.getMaterias().add(this);
     }
 
     public int getCantidadCreditos() {
@@ -50,5 +59,21 @@ public class Materia {
 
     public void setPrerrequisitos(ArrayList<Asignatura> prerrequisitos) {
         this.prerrequisitos = prerrequisitos;
+    }
+
+    public static ArrayList<Materia> getMaterias() {
+        return materias;
+    }
+
+    public static void setMaterias(ArrayList<Materia> materias) {
+        Materia.materias = materias;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }

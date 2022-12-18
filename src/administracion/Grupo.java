@@ -60,4 +60,8 @@ public class Grupo {
     public void setNombreAsignatura(String nombreAsignatura) {
         this.nombreAsignatura = nombreAsignatura;
     }
+
+    public static ArrayList<Grupo> getGrupos() {
+        return grupos;
+    }
 }

@@ -35,19 +35,21 @@ public class HistoriaAcademica {
         for (Asignatura asignaturaVista: asignaturasVistas){
             totalCreditos += asignaturaVista.getCantidadCreditos();
             creditosPorCalificacion += asignaturaVista.getCantidadCreditos() * asignaturaVista.calcularDefinitiva();
-            if (asignaturaVista.getTipo().equals(TIPO.DISCIPLINAR_OBLIGATORIA)){
+            if (asignaturaVista.getTipo() != null){
+                if (asignaturaVista.getTipo().equals(TIPO.DISCIPLINAR_OBLIGATORIA)){
 
-                this.creditosDiscOblg += asignaturaVista.getCantidadCreditos();
+                    this.creditosDiscOblg += asignaturaVista.getCantidadCreditos();
 
-            } else if (asignaturaVista.getTipo().equals(TIPO.NIVELACION)) {
-                this.creditosNivelacion += asignaturaVista.getCantidadCreditos();
+                } else if (asignaturaVista.getTipo().equals(TIPO.NIVELACION)) {
+                    this.creditosNivelacion += asignaturaVista.getCantidadCreditos();
 
-            } else if (asignaturaVista.getTipo().equals(TIPO.FUND_OBLIGATORIA)) {
-                this.creditosFundOblg += asignaturaVista.getCantidadCreditos();
+                } else if (asignaturaVista.getTipo().equals(TIPO.FUND_OBLIGATORIA)) {
+                    this.creditosFundOblg += asignaturaVista.getCantidadCreditos();
 
-            } else if (asignaturaVista.getTipo().equals(TIPO.LIBRE_ELECCION)) {
-                this.creditosLibreEleccion += asignaturaVista.getCantidadCreditos();
+                } else if (asignaturaVista.getTipo().equals(TIPO.LIBRE_ELECCION)) {
+                    this.creditosLibreEleccion += asignaturaVista.getCantidadCreditos();
 
+                }
             }
         }
 

@@ -21,6 +21,7 @@ public class MenuPrincipal {
             switch (respuesta){
                 case "1":
                     respuesta = "0";
+                    MenuInscripcion.mostrarInscribir();
                     break;
 
                 case "2":

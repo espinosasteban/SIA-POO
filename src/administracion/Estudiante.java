@@ -57,10 +57,7 @@ public class Estudiante extends MiembroUnal{
         Estudiante.getArrayEstudiantes().add(this);
     }
 
-    public Estudiante() {
-        super();
-        Estudiante.getArrayEstudiantes().add(this);
-    }
+
 
     @Override
     public String saludar() {
@@ -110,7 +107,7 @@ public class Estudiante extends MiembroUnal{
 
     private ArrayList<Grupo> gruposPertenece(){
         ArrayList<Grupo> grupos = new ArrayList<>();
-        for(Grupo grupo: Grupo.grupos){
+        for(Grupo grupo: Grupo.getGrupos()){
             if(grupo.getEstudiantes().contains(this)){
                 grupos.add(grupo);
             }
@@ -119,11 +116,16 @@ public class Estudiante extends MiembroUnal{
     }
 
     public void setPeriodoActual(Periodo periodoActual) {
+
         this.periodoActual = periodoActual;
-        for(Asignatura asignaturaViendo: periodoActual.getAsignaturas()){
-            if(!getAsignaturasActuales().contains(asignaturaViendo)){
-                getAsignaturasActuales().add(asignaturaViendo);
+        if (periodoActual.getAsignaturas() != null){
+            for(Asignatura asignaturaViendo: periodoActual.getAsignaturas()){
+                if(!getAsignaturasActuales().contains(asignaturaViendo)){
+                    getAsignaturasActuales().add(asignaturaViendo);
+                }
             }
+        }else {
+            periodoActual.setAsignaturas(new ArrayList<>());
         }
     }
 

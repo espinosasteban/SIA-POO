@@ -7,6 +7,8 @@ import java.util.HashMap;
 
 public class Inicializador {
     public static void inicializar(){
+
+
         //Creación de estudiantes
 
         ArrayList<Estudiante> estudiantesPrueba = new ArrayList<>();
@@ -204,6 +206,67 @@ public class Inicializador {
         notas18.add(trabajo18);
         Asignatura asignaturaPrueba18 = new Asignatura("Asignatura16",3,new Grupo(),notas18,TIPO.FUND_OBLIGATORIA);
         estudiante18.getHistoriaAcademica().getAsignaturasVistas().add(asignaturaPrueba18);
+
+
+
+
+
+        //Creacion de materias
+
+
+        Asignatura P_Vectorial = new Asignatura("Geometria Vectorial");
+        Asignatura P_calculoDiferencial = new Asignatura("Calculo Diferencial");
+        Asignatura P_algebraLineal = new Asignatura("Algebra Lineal");
+        Asignatura P_calculoIntegral = new Asignatura("Calculo Integral");
+        Asignatura P_estadistica = new Asignatura("Estadistica");
+        Asignatura P_fisicaMecanica = new Asignatura("Fisica Mecanica");
+        Asignatura P_ecuaciones = new Asignatura("Ecuaciones Diferenciales");
+
+
+
+
+        //Integral
+        ArrayList<Asignatura> prerrequisitosIntegral = new ArrayList<>();
+
+        prerrequisitosIntegral.add(P_calculoDiferencial);
+        Materia CalculoIntegral = new Materia("Calculo Integral", 4, prerrequisitosIntegral, TIPO.FUND_OBLIGATORIA);
+
+        //Lineal
+        ArrayList<Asignatura> prerrequisitosLineal = new ArrayList<>();
+
+        prerrequisitosLineal.add(P_Vectorial);
+        Materia AlgebraLineal = new Materia("Algebra Lineal", 4, prerrequisitosLineal, TIPO.FUND_OBLIGATORIA);
+
+        //Estadistica1
+        ArrayList<Asignatura> prerrequisitosEstadistica = new ArrayList<>();
+
+        prerrequisitosEstadistica.add(P_algebraLineal);
+        prerrequisitosEstadistica.add(P_calculoIntegral);
+        Materia Estadistica = new Materia("Estadistica", 4, prerrequisitosEstadistica, TIPO.FUND_OBLIGATORIA);
+
+        //FisicaMecanica
+        ArrayList<Asignatura> prerrequisitosFisicaMecanica = new ArrayList<>();
+
+        prerrequisitosFisicaMecanica.add(P_estadistica);
+        Materia FisicaMecanica = new Materia("Fisica Mecanica", 4, prerrequisitosFisicaMecanica, TIPO.FUND_OBLIGATORIA);
+
+        //Ecuaciones Diferenciales
+        ArrayList<Asignatura> prerrequisitosEcuaciones = new ArrayList<>();
+
+        prerrequisitosEcuaciones.add(P_calculoIntegral);
+        prerrequisitosEcuaciones.add(P_algebraLineal);
+        Materia EcuacionesDiferenciales = new Materia("Ecuaciones Diferenciales", 4, prerrequisitosEcuaciones, TIPO.FUND_OBLIGATORIA);
+
+
+
+        Estudiante estudianteInscribir = new Estudiante("prueba@gmail.com","Prueba","Test",22);
+
+        estudianteInscribir.getHistoriaAcademica().getAsignaturasVistas().add(P_calculoDiferencial);
+        estudianteInscribir.getHistoriaAcademica().getAsignaturasVistas().add(P_calculoIntegral);
+
+
+
+
     }
 
 

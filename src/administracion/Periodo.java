@@ -25,6 +25,10 @@ public class Periodo {
         this.asignaturas = asignaturas;
     }
 
+    public Periodo(String semestre) {
+        this.semestre = semestre;
+    }
+
     public String getSemestre() {
         return semestre;
     }
